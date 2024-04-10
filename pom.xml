@@ -1,6 +1,5 @@
-
 <!--
-  ~ Copyright (c) 2022. David W. Streever All Rights Reserved
+  ~ Copyright (c) 2024. David W. Streever All Rights Reserved
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
   ~  you may not use this file except in compliance with the License.
@@ -51,20 +50,22 @@
 
         <!-- Support  Libs-->
         <junit.version>4.13.1</junit.version>
-<!--        <jackson.version>2.16.1</jackson.version>-->
+
         <slf4j-reload4j.version>1.7.36</slf4j-reload4j.version>
         <logback-classic.version>1.4.14</logback-classic.version>
 
         <lombok.version>1.18.30</lombok.version>
+
+        <commons-lang.version>3.12.0</commons-lang.version>
         <commons-io.version>2.16.1</commons-io.version>
         <commons-cli.version>1.4</commons-cli.version>
         <commons-pool.version>2.9.0</commons-pool.version>
-                <commons-text.version>1.10.0</commons-text.version>
+        <commons-text.version>1.10.0</commons-text.version>
 
         <jcabi.manifests.version>1.1</jcabi.manifests.version>
-        <commons-lang.version>3.12.0</commons-lang.version>
         <jackson.version>2.16.1</jackson.version>
         <snakeyaml.version>2.2</snakeyaml.version>
+
         <cdp.scope>compile</cdp.scope>
         <cdp.version>7.1.9.3-4</cdp.version>
         <hadoop.version>3.1.1</hadoop.version>
@@ -306,16 +307,16 @@
                     <groupId>ch.qos.reload4j</groupId>
                     <artifactId>reload4j</artifactId>
                 </exclusion>
-<!--                <exclusion>-->
-<!--                    <groupId>commons-lang</groupId>-->
-<!--                    <artifactId>commons-lang</artifactId>-->
-<!--                </exclusion>-->
+                <!--                <exclusion>-->
+                <!--                    <groupId>commons-lang</groupId>-->
+                <!--                    <artifactId>commons-lang</artifactId>-->
+                <!--                </exclusion>-->
                 <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-api</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId> org.slf4j</groupId>
+                    <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-reload4j</artifactId>
                 </exclusion>
                 <exclusion>
@@ -396,11 +397,11 @@
         </dependency>
         <!--        Too big, add manually is s3 support is needed-->
         <!--        <dependency>-->
-<!--            <groupId>org.apache.hadoop</groupId>-->
-<!--            <artifactId>hadoop-aws</artifactId>-->
-<!--            <version>${hadoop.version}.${cdp.version}</version>-->
-<!--            <scope>${cdp.scope}</scope>-->
-<!--        </dependency>-->
+        <!--            <groupId>org.apache.hadoop</groupId>-->
+        <!--            <artifactId>hadoop-aws</artifactId>-->
+        <!--            <version>${hadoop.version}.${cdp.version}</version>-->
+        <!--            <scope>${cdp.scope}</scope>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-auth</artifactId>
@@ -457,8 +458,6 @@
             <artifactId>snakeyaml</artifactId>
             <version>${snakeyaml.version}</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-text</artifactId>
@@ -553,7 +552,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
