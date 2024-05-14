@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cloudera.utils</groupId>
     <artifactId>hadoop.parent</artifactId>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
     <packaging>pom</packaging>
 
     <name>Cloudera Utils Parent</name>
@@ -50,10 +50,6 @@
 
         <!-- Support  Libs-->
         <junit.version>4.13.1</junit.version>
-
-<!--        <slf4j-reload4j.version>1.7.36</slf4j-reload4j.version>-->
-<!--        <logback-classic.version>1.4.14</logback-classic.version>-->
-<!--        <qos.reload4j.version>1.2.25</qos.reload4j.version>-->
 
         <lombok.version>1.18.30</lombok.version>
 
@@ -603,7 +599,7 @@
                             <goal>repackage</goal>
                         </goals>
                         <configuration>
-                            <mainClass>com.cloudera.utils.hadoop.HadoopCliApplication</mainClass>
+                            <mainClass>org.springframework.boot.loader.PropertiesLauncher</mainClass>
                             <!-- layout needs to be zip in order to support '-Dload.path..'  -->
                             <layout>ZIP</layout>
                             <classifier>standalone</classifier>
