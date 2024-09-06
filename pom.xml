@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cloudera.utils</groupId>
     <artifactId>hadoop.parent</artifactId>
-    <version>1.0.0.1</version>
+    <version>1.1.0.0</version>
     <packaging>pom</packaging>
 
     <name>Cloudera Utils Parent</name>
@@ -64,9 +64,9 @@
         <snakeyaml.version>2.2</snakeyaml.version>
 
         <cdp.scope>compile</cdp.scope>
-        <cdp.version>7.1.9.3-4</cdp.version>
+        <cdp.version>7.1.9.1000-103</cdp.version>
         <hadoop.version>3.1.1</hadoop.version>
-        <ozone.version>1.2.0</ozone.version>
+        <ozone.version>1.4.0</ozone.version>
 
         <gateway-shell.version>1.0.0</gateway-shell.version>
         <jline.version>2.5</jline.version>
@@ -604,6 +604,20 @@
                             <layout>ZIP</layout>
                             <classifier>standalone</classifier>
                             <executable>true</executable>
+                            <excludes>
+                                <exclude>
+                                    <groupId>org.mariadb.jdbc</groupId>
+                                    <artifactId>mariadb-java-client</artifactId>
+                                </exclude>
+                                <exclude>
+                                    <groupId>org.postgresql</groupId>
+                                    <artifactId>postgresql</artifactId>
+                                </exclude>
+                                <exclude>
+                                    <groupId>com.oracle.database.jdbc</groupId>
+                                    <artifactId>ojdbc8</artifactId>
+                                </exclude>
+                            </excludes>
                         </configuration>
                     </execution>
                     <execution>
@@ -618,6 +632,18 @@
                             <classifier>thin</classifier>
                             <executable>true</executable>
                             <excludes>
+                                <exclude>
+                                    <groupId>org.mariadb.jdbc</groupId>
+                                    <artifactId>mariadb-java-client</artifactId>
+                                </exclude>
+                                <exclude>
+                                    <groupId>org.postgresql</groupId>
+                                    <artifactId>postgresql</artifactId>
+                                </exclude>
+                                <exclude>
+                                    <groupId>com.oracle.database.jdbc</groupId>
+                                    <artifactId>ojdbc8</artifactId>
+                                </exclude>
                                 <exclude>
                                     <groupId>org.apache.hadoop</groupId>
                                     <artifactId>hadoop-hdfs</artifactId>
@@ -1023,7 +1049,6 @@
                                     <artifactId>token-provider</artifactId>
                                 </exclude>
                             </excludes>
-
                         </configuration>
                     </execution>
                 </executions>
