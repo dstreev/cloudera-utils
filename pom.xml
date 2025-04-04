@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cloudera.utils</groupId>
     <artifactId>hadoop.parent</artifactId>
-    <version>1.1.2.0</version>
+    <version>1.3.0.0</version>
     <packaging>pom</packaging>
 
     <name>Cloudera Utils Parent</name>
@@ -27,13 +27,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>8</jdk.version>
-        <spring-framework.version>5.3.39</spring-framework.version>
+        <jdk.version>17</jdk.version>
+
         <!-- Pluggins -->
-        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <maven.compiler.version>3.14.0</maven.compiler.version>
         <maven.toolchains.version>3.1.0</maven.toolchains.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <maven.clean.version>3.1.0</maven.clean.version>
         <maven.resources.version>3.0.2</maven.resources.version>
         <maven.surefire.version>2.22.1</maven.surefire.version>
@@ -46,28 +46,28 @@
         <maven.assembly.version>3.3.0</maven.assembly.version>
 
         <!-- Spring -->
-        <springboot.version>2.7.18</springboot.version>
-        <spring-framework.version>5.3.39</spring-framework.version>
+        <springboot.version>3.4.4</springboot.version>
+        <spring-framework.version>6.2.5</spring-framework.version>
 
         <!-- Support  Libs-->
-        <junit.version>4.13.1</junit.version>
+        <junit.version>4.13.2</junit.version>
 
-        <lombok.version>1.18.30</lombok.version>
+        <lombok.version>1.18.38</lombok.version>
 
-        <commons-lang.version>3.12.0</commons-lang.version>
-        <commons-io.version>2.16.1</commons-io.version>
-        <commons-cli.version>1.4</commons-cli.version>
-        <commons-pool.version>2.9.0</commons-pool.version>
-        <commons-text.version>1.10.0</commons-text.version>
+        <commons-lang3.version>3.17.0</commons-lang3.version>
+        <commons-io.version>2.18.0</commons-io.version>
+        <commons-cli.version>1.9.0</commons-cli.version>
+        <commons-pool2.version>2.12.1</commons-pool2.version>
+        <commons-text.version>1.13.0</commons-text.version>
 
         <jcabi.manifests.version>1.1</jcabi.manifests.version>
-        <jackson.version>2.16.1</jackson.version>
-        <snakeyaml.version>2.2</snakeyaml.version>
+        <jackson.version>2.18.3</jackson.version>
+        <snakeyaml.version>2.4</snakeyaml.version>
 
         <cdp.scope>compile</cdp.scope>
-        <cdp.version>7.1.9.1005-2</cdp.version>
+        <cdp.version>7.3.1.0-197</cdp.version>
         <hadoop.version>3.1.1</hadoop.version>
-        <ozone.version>1.4.0</ozone.version>
+        <ozone.version>1.3.0</ozone.version>
 
         <gateway-shell.version>1.0.0</gateway-shell.version>
         <jline.version>2.5</jline.version>
@@ -249,6 +249,10 @@
                     <artifactId>commons-cli</artifactId>
                 </exclusion>
                 <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+                <exclusion>
                     <groupId>commons-codec</groupId>
                     <artifactId>commons-codec</artifactId>
                 </exclusion>
@@ -323,6 +327,10 @@
                 <exclusion>
                     <groupId>commons-collections</groupId>
                     <artifactId>commons-collections</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>commons-net</groupId>
@@ -452,6 +460,10 @@
                     <groupId>org.apache.ratis</groupId>
                     <artifactId>ratis-netty</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>commons-beanutils</groupId>
+                    <artifactId>commons-beanutils</artifactId>
+                </exclusion>
                 <!--exclusion>
                     <groupId>org.apache.ratis</groupId>
                     <artifactId>ratis-grpc</artifactId>
@@ -513,6 +525,10 @@
                     <groupId>org.apache.kerby</groupId>
                     <artifactId>kerb-admin</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <!-- Jackson JSON Libraries -->
@@ -560,12 +576,12 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang.version}</version>
+            <version>${commons-lang3.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
-            <version>${commons-pool.version}</version>
+            <version>${commons-pool2.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -584,56 +600,56 @@
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${springboot.version}</version>
                 </plugin>
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>${maven.clean.version}</version>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <artifactId>maven-clean-plugin</artifactId>-->
+<!--                    <version>${maven.clean.version}</version>-->
+<!--                </plugin>-->
                 <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>${maven.resources.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven.compiler.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-toolchains-plugin</artifactId>
-                    <version>${maven.toolchains.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven.surefire.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>${maven.install.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${maven.deploy.version}</version>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <artifactId>maven-resources-plugin</artifactId>-->
+<!--                    <version>${maven.resources.version}</version>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                    <version>${maven.compiler.version}</version>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-toolchains-plugin</artifactId>-->
+<!--                    <version>${maven.toolchains.version}</version>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                    <version>${maven.surefire.version}</version>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-install-plugin</artifactId>-->
+<!--                    <version>${maven.install.version}</version>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-deploy-plugin</artifactId>-->
+<!--                    <version>${maven.deploy.version}</version>-->
+<!--                </plugin>-->
                 <!--            site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle-->
-                <plugin>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${maven.site.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>${maven.reports.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-shade-plugin</artifactId>
-                    <version>${maven.shade.plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>${maven.assembly.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>${maven.jar.version}</version>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <artifactId>maven-site-plugin</artifactId>-->
+<!--                    <version>${maven.site.version}</version>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-project-info-reports-plugin</artifactId>-->
+<!--                    <version>${maven.reports.version}</version>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-shade-plugin</artifactId>-->
+<!--                    <version>${maven.shade.plugin.version}</version>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-assembly-plugin</artifactId>-->
+<!--                    <version>${maven.assembly.version}</version>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-jar-plugin</artifactId>-->
+<!--                    <version>${maven.jar.version}</version>-->
+<!--                </plugin>-->
             </plugins>
         </pluginManagement>
         <plugins>
