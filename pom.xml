@@ -53,8 +53,6 @@
         <janino.version>3.1.12</janino.version>
 
         <!-- Support  Libs-->
-        <junit.version>4.13.2</junit.version>
-
         <lombok.version>1.18.38</lombok.version>
 
         <commons-lang3.version>3.17.0</commons-lang3.version>
@@ -169,42 +167,11 @@
             <version>${springboot.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- JUnit 5 Vintage
-            Allow it to pickup the Junit4 tests
-        -->
-        <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hamcrest</groupId>
-                    <artifactId>hamcrest-core</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-reload4j</artifactId>-->
-<!--            <version>${slf4j-reload4j.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>ch.qos.logback</groupId>-->
-<!--            <artifactId>logback-classic</artifactId>-->
-<!--            <version>${logback-classic.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>ch.qos.reload4j</groupId>-->
-<!--            <artifactId>reload4j</artifactId>-->
-<!--            <version>${qos.reload4j.version}</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.jcabi</groupId>
             <artifactId>jcabi-manifests</artifactId>
@@ -486,13 +453,6 @@
             <version>${ozone.version}.${cdp.version}</version>
             <scope>${cdp.scope}</scope>
         </dependency>
-        <!--        Too big, add manually is s3 support is needed-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.hadoop</groupId>-->
-        <!--            <artifactId>hadoop-aws</artifactId>-->
-        <!--            <version>${hadoop.version}.${cdp.version}</version>-->
-        <!--            <scope>${cdp.scope}</scope>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-auth</artifactId>
@@ -581,12 +541,6 @@
             <artifactId>commons-pool2</artifactId>
             <version>${commons-pool2.version}</version>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
@@ -598,56 +552,6 @@
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${springboot.version}</version>
                 </plugin>
-<!--                <plugin>-->
-<!--                    <artifactId>maven-clean-plugin</artifactId>-->
-<!--                    <version>${maven.clean.version}</version>-->
-<!--                </plugin>-->
-                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-resources-plugin</artifactId>-->
-<!--                    <version>${maven.resources.version}</version>-->
-<!--                </plugin>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                    <version>${maven.compiler.version}</version>-->
-<!--                </plugin>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-toolchains-plugin</artifactId>-->
-<!--                    <version>${maven.toolchains.version}</version>-->
-<!--                </plugin>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                    <version>${maven.surefire.version}</version>-->
-<!--                </plugin>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-install-plugin</artifactId>-->
-<!--                    <version>${maven.install.version}</version>-->
-<!--                </plugin>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-deploy-plugin</artifactId>-->
-<!--                    <version>${maven.deploy.version}</version>-->
-<!--                </plugin>-->
-                <!--            site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-site-plugin</artifactId>-->
-<!--                    <version>${maven.site.version}</version>-->
-<!--                </plugin>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-project-info-reports-plugin</artifactId>-->
-<!--                    <version>${maven.reports.version}</version>-->
-<!--                </plugin>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-shade-plugin</artifactId>-->
-<!--                    <version>${maven.shade.plugin.version}</version>-->
-<!--                </plugin>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-assembly-plugin</artifactId>-->
-<!--                    <version>${maven.assembly.version}</version>-->
-<!--                </plugin>-->
-<!--                <plugin>-->
-<!--                    <artifactId>maven-jar-plugin</artifactId>-->
-<!--                    <version>${maven.jar.version}</version>-->
-<!--                </plugin>-->
             </plugins>
         </pluginManagement>
         <plugins>
